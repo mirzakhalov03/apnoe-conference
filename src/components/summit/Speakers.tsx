@@ -1,5 +1,7 @@
+import muzaffarovImg from "@/assets/muzaffarov.jpg";
+
 const speakers = [
-  { name: "Prof. Elin Lindqvist", role: "Karolinska Instituti, Shvetsiya", seed: "elin" },
+  { name: "Muzaffarov Tuyg'unxon Akromovich", role: "Jonli tadqiqot mutaxassisi", image: muzaffarovImg },
   { name: "Dr. Michael Okafor", role: "Johns Hopkins, AQSh", seed: "michael" },
   { name: "Dr. Aleksei Petrov", role: "Charité Berlin, Germaniya", seed: "aleksei" },
   { name: "Dr. Lina Tanaka", role: "Kioto Universiteti, Yaponiya", seed: "lina" },
