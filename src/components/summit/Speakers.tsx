@@ -13,16 +13,48 @@ const speakers = [
 
 export function Speakers() {
   return (
-    <section id="speakers" className="relative bg-secondary/40 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 sm:px-8">
+    <section id="speakers" className="relative overflow-hidden bg-secondary/40 py-24 sm:py-32">
+      {/* Medical minimalistic decorative elements */}
+      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-40" />
+      <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-0 -left-32 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl" />
+
+      {/* ECG / heartbeat line */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute left-0 right-0 top-16 mx-auto h-10 w-full max-w-4xl text-primary/30"
+        viewBox="0 0 800 40"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M0 20 H260 L275 20 L285 8 L300 32 L315 4 L330 28 L345 20 H540 L555 20 L565 12 L580 28 L595 20 H800" />
+      </svg>
+
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Mutaxassislar</div>
-            <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-3 py-1 backdrop-blur">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Mutaxassislar</span>
+            </div>
+            <h2 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
               Uyqu tibbiyotini shakllantiruvchi jahon ovozlari.
             </h2>
+            <div className="mt-5 flex items-center gap-3">
+              <span className="h-px w-12 bg-primary/40" />
+              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Klinik mukammallik · 2026</span>
+            </div>
           </div>
-          <a href="#" className="text-sm font-semibold text-primary hover:underline">Barcha mutaxassislar →</a>
+          <a href="#" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary">
+            <span className="border-b border-primary/30 pb-0.5 transition-colors group-hover:border-primary">Barcha mutaxassislar</span>
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </a>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
