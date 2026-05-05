@@ -33,9 +33,14 @@ export function Register() {
                   </li>
                 ))}
               </ul>
-              <button className={`mt-10 w-full rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}>
+              <a
+                href="https://t.me/OtolorAcademyBot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-10 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}
+              >
                 Ro'yxatdan o'tish
-              </button>
+              </a>
             </div>
           ))}
         </div>
