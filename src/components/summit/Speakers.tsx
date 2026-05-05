@@ -1,5 +1,7 @@
+import muzaffarovImg from "@/assets/muzaffarov.jpg";
+
 const speakers = [
-  { name: "Prof. Elin Lindqvist", role: "Karolinska Instituti, Shvetsiya", seed: "elin" },
+  { name: "Muzaffarov Tuyg'unxon Akromovich", role: "Jonli tadqiqot mutaxassisi", image: muzaffarovImg },
   { name: "Dr. Michael Okafor", role: "Johns Hopkins, AQSh", seed: "michael" },
   { name: "Dr. Aleksei Petrov", role: "Charité Berlin, Germaniya", seed: "aleksei" },
   { name: "Dr. Lina Tanaka", role: "Kioto Universiteti, Yaponiya", seed: "lina" },
@@ -30,7 +32,7 @@ export function Speakers() {
                 <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40" />
                 <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-border transition-all duration-500 group-hover:ring-2 group-hover:ring-primary group-hover:-translate-y-1">
                   <img
-                    src={`https://i.pravatar.cc/400?img=${s.seed.length + 10}`}
+                    src={s.image ?? `https://i.pravatar.cc/400?img=${(s.seed?.length ?? 0) + 10}`}
                     alt={s.name}
                     loading="lazy"
                     width={400}
