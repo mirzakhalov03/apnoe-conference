@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-const TARGET = new Date("2026-10-15T09:00:00Z").getTime();
+const TARGET = new Date("2026-10-12T09:00:00Z").getTime();
 
-function diff() {
-  const d = Math.max(0, TARGET - Date.now());
+function diff(now: number) {
+  const d = Math.max(0, TARGET - now);
   return {
     days: Math.floor(d / 86400000),
     hours: Math.floor((d / 3600000) % 24),
@@ -13,16 +13,17 @@ function diff() {
 }
 
 export function Countdown() {
-  const [t, setT] = useState(diff);
+  const [t, setT] = useState(() => diff(TARGET));
   useEffect(() => {
-    const i = setInterval(() => setT(diff()), 1000);
+    setT(diff(Date.now()));
+    const i = setInterval(() => setT(diff(Date.now())), 1000);
     return () => clearInterval(i);
   }, []);
   const items: [string, number][] = [
-    ["Days", t.days],
-    ["Hours", t.hours],
-    ["Minutes", t.minutes],
-    ["Seconds", t.seconds],
+    ["Kun", t.days],
+    ["Soat", t.hours],
+    ["Daqiqa", t.minutes],
+    ["Soniya", t.seconds],
   ];
   return (
     <div className="flex gap-3 sm:gap-5">

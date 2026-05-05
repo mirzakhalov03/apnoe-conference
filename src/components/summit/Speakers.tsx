@@ -1,11 +1,11 @@
 const speakers = [
-  { name: "Prof. Elin Lindqvist", role: "Karolinska Institute, Sweden", seed: "elin" },
-  { name: "Dr. Michael Okafor", role: "Johns Hopkins, USA", seed: "michael" },
-  { name: "Dr. Aleksei Petrov", role: "Charité Berlin, DE", seed: "aleksei" },
-  { name: "Dr. Lina Tanaka", role: "Kyoto University, JP", seed: "lina" },
-  { name: "Prof. Rainer Bauer", role: "Vienna Medical, AT", seed: "rainer" },
-  { name: "Dr. Sofia Mendes", role: "USP São Paulo, BR", seed: "sofia" },
-  { name: "Dr. Kyung Yoon", role: "Seoul National, KR", seed: "kyung" },
+  { name: "Prof. Elin Lindqvist", role: "Karolinska Instituti, Shvetsiya", seed: "elin" },
+  { name: "Dr. Michael Okafor", role: "Johns Hopkins, AQSh", seed: "michael" },
+  { name: "Dr. Aleksei Petrov", role: "Charité Berlin, Germaniya", seed: "aleksei" },
+  { name: "Dr. Lina Tanaka", role: "Kioto Universiteti, Yaponiya", seed: "lina" },
+  { name: "Prof. Rainer Bauer", role: "Vena Tibbiyot, Avstriya", seed: "rainer" },
+  { name: "Dr. Sofia Mendes", role: "USP San-Paulo, Braziliya", seed: "sofia" },
+  { name: "Dr. Kyung Yoon", role: "Seul Milliy, Koreya", seed: "kyung" },
   { name: "Dr. Nadia Hassan", role: "Imperial College London", seed: "nadia" },
 ];
 
@@ -15,12 +15,12 @@ export function Speakers() {
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Faculty</div>
+            <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Mutaxassislar</div>
             <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-              World-class voices shaping sleep medicine.
+              Uyqu tibbiyotini shakllantiruvchi jahon ovozlari.
             </h2>
           </div>
-          <a href="#" className="text-sm font-semibold text-primary hover:underline">View full faculty →</a>
+          <a href="#" className="text-sm font-semibold text-primary hover:underline">Barcha mutaxassislar →</a>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
