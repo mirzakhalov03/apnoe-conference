@@ -30,7 +30,7 @@ export function Program() {
           <div className="relative pl-12 sm:pl-20">
             <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-glow">
               <div className="text-center leading-tight">
-                <div className="text-[10px] sm:text-xs font-bold">12</div>
+                <div className="text-[10px] sm:text-xs font-bold">10</div>
                 <div className="text-[9px] sm:text-[10px]">OKT</div>
               </div>
             </div>
