@@ -26,7 +26,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="Silent Sleep" className="h-12 w-auto sm:h-14" width={220} height={56} />
+          <img src={logo} alt="Silent Sleep" className="h-16 w-auto sm:h-20" width={320} height={80} />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
