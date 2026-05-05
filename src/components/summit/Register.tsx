@@ -1,7 +1,7 @@
 const tiers = [
-  { name: "Early Bird", price: "€690", note: "Until June 30", features: ["All sessions", "Welcome reception", "Conference materials"] },
-  { name: "Standard", price: "€890", note: "Most popular", features: ["All sessions", "Welcome reception", "Gala dinner", "Workshops"], featured: true },
-  { name: "Resident & Student", price: "€290", note: "ID required", features: ["All sessions", "Conference materials"] },
+  { name: "Erta Ro'yxat", price: "850 000 so'm", note: "30 iyungacha", features: ["Barcha sessiyalar", "Kutib olish marosimi", "Konferensiya materiallari"] },
+  { name: "Standart", price: "1 200 000 so'm", note: "Eng mashhur", features: ["Barcha sessiyalar", "Kutib olish marosimi", "Gala kechki ovqat", "Ustaxonalar"], featured: true },
+  { name: "Rezident va Talaba", price: "350 000 so'm", note: "ID talab qilinadi", features: ["Barcha sessiyalar", "Konferensiya materiallari"] },
 ];
 
 export function Register() {
@@ -10,9 +10,9 @@ export function Register() {
       <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-secondary/40 to-transparent" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
-          <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Registration</div>
+          <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Ro'yxatdan o'tish</div>
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Reserve your seat at the summit.
+            Sammitda o'z o'rningizni band qiling.
           </h2>
         </div>
 
@@ -24,7 +24,7 @@ export function Register() {
             >
               <div className={`text-xs font-semibold uppercase tracking-widest ${t.featured ? "text-primary-foreground/70" : "text-primary"}`}>{t.note}</div>
               <div className="mt-2 font-display text-2xl font-semibold">{t.name}</div>
-              <div className="mt-6 font-display text-5xl font-bold tracking-tight">{t.price}</div>
+              <div className="mt-6 font-display text-4xl font-bold tracking-tight">{t.price}</div>
               <ul className={`mt-8 space-y-3 text-sm ${t.featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}>
                 {t.features.map((f) => (
                   <li key={f} className="flex items-center gap-3">
@@ -34,7 +34,7 @@ export function Register() {
                 ))}
               </ul>
               <button className={`mt-10 w-full rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}>
-                Register
+                Ro'yxatdan o'tish
               </button>
             </div>
           ))}
