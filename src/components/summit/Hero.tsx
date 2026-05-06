@@ -15,10 +15,9 @@ export function Hero() {
             O'zbekiston, Toshkent · 10.10.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
-            Xalqaro Sammit{" "}
-            <span className="bg-gradient-primary bg-clip-text text-transparent">2026</span>
+            <br />
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-muted-foreground sm:text-xl text-balance">
+          <p className="mt-3 font-display font-bold text-foreground sm:text-5xl text-balance text-4xl">
             Silent Sleep — uyqu apnoesi, xurrak va respirator tibbiyot bo'yicha
             global yechimlarni klinik mukammallik orqali ilgari surish.
           </p>
