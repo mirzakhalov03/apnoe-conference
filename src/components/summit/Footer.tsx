@@ -38,13 +38,13 @@ export function Footer() {
               Manzil
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              EMU University
+              CAU Event Hall
               <br />
-              Bunyodkor Avenue 42a
+              264 Milliy Bog' St
               <br />
-              Tashkent, 100100
+              Tashkent, 111221
               <br />
-              O'zbekiston
+              Tashkent Region, O'zbekiston
             </p>
           </div>
 
