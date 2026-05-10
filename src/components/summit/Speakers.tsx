@@ -3,15 +3,12 @@ import s2 from "@/assets/speaker-2.jpg";
 import s3 from "@/assets/speaker-3.webp";
 import s4 from "@/assets/speaker-4.webp";
 import s5 from "@/assets/speaker-5.webp";
-import s6 from "@/assets/speaker-6.jpg";
-
 const speakers = [
   { name: "Tuyg'unxon Muzaffarov", image: s1 },
   { name: "Sherzod Gulyamov", image: s2 },
   { name: "Vladimir Krivitskiy", image: s3 },
   { name: "Roman Buzunov", image: s4 },
   { name: "Maryam Jafarova", image: s5 },
-  { name: "Azizbek Urunov", image: s6 },
 ];
 
 export function Speakers() {

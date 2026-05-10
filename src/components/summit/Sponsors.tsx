@@ -2,7 +2,7 @@ const sponsors = [
   "Otolor",
   "Corel Med",
   "Barun",
-  "EMU University",
+  "Central Asian University",
   "Silent Sleep",
   "Bolalar Milliy Tibbiyot Markazi",
 ];
