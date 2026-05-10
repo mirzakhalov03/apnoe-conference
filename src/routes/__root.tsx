@@ -30,9 +30,16 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Silent Sleep Xalqaro Sammiti 2026 — Toshkent" },
-      { name: "description", content: "Uyqu apnoesi va zamonaviy yechimlar bo'yicha xalqaro tibbiyot sammiti. 12 oktyabr 2026, Toshkent." },
+      {
+        name: "description",
+        content:
+          "Uyqu apnoesi va zamonaviy yechimlar bo'yicha xalqaro tibbiyot sammiti. 12 oktyabr 2026, Toshkent.",
+      },
       { property: "og:title", content: "Silent Sleep Xalqaro Sammiti 2026" },
-      { property: "og:description", content: "Apnoe yechimlarini ilgari surish — xalqaro tibbiyot sammiti, Toshkent." },
+      {
+        property: "og:description",
+        content: "Apnoe yechimlarini ilgari surish — xalqaro tibbiyot sammiti, Toshkent.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -40,7 +47,10 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/silent-sleep-logo.png";
+import logo from "@/assets/apnologlar-logo.png";
+import otolor from "@/assets/otolor-logo.jpg";
+import { RegistrationBanner } from "./RegistrationBanner";
 
 const links = [
   { href: "#program", label: "Dastur" },
@@ -21,12 +23,29 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur-xl border-b border-border" : "bg-background/60 backdrop-blur-sm"
+        scrolled
+          ? "bg-background/85 backdrop-blur-xl border-b border-border"
+          : "bg-background/60 backdrop-blur-sm"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
-        <a href="#top" className="flex items-center gap-3">
-          <img src={logo} alt="Silent Sleep" className="h-16 w-auto sm:h-20" width={320} height={80} />
+        <a href="#top" className="flex flex-col items-center gap-1">
+          <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
+            In partnership with
+          </span>
+          <div className="flex items-center gap-2.5">
+            <div className="h-11 w-11 sm:h-13 sm:w-13 rounded-full overflow-hidden ring-2 ring-primary/20 shadow-elegant flex-shrink-0">
+              <img
+                src={logo}
+                alt="O'zbekiston Apnologlari"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <span className="text-muted-foreground/40 text-base select-none">×</span>
+            <div className="h-11 w-11 sm:h-13 sm:w-13 rounded-full overflow-hidden ring-2 ring-border shadow-soft flex-shrink-0 bg-white">
+              <img src={otolor} alt="Otolor" className="h-full w-full object-cover" />
+            </div>
+          </div>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {links.map((l) => (
@@ -50,7 +69,14 @@ export function Header() {
           onClick={() => setOpen(!open)}
           className="md:hidden rounded-md p-2 text-foreground"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
             <path d="M3 6h18M3 12h18M3 18h18" />
           </svg>
         </button>
@@ -78,6 +104,7 @@ export function Header() {
           </div>
         </div>
       )}
+      <RegistrationBanner />
     </header>
   );
 }

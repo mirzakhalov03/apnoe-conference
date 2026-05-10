@@ -1,9 +1,9 @@
-import airway from "@/assets/airway-hero.jpg";
+import heroMain from "@/assets/hero-main.jpg";
 import { Countdown } from "./Countdown";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32 sm:pt-40 pb-20 sm:pb-28">
+    <section id="top" className="relative overflow-hidden pt-40 sm:pt-48 pb-20 sm:pb-28">
       <div className="absolute inset-0 grid-pattern opacity-60" />
       <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute -bottom-40 -left-40 h-[420px] w-[420px] rounded-full bg-teal/20 blur-3xl" />
@@ -15,11 +15,10 @@ export function Hero() {
             O'zbekiston, Toshkent · 10.10.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
-            <br />
+            Xalqaro Konferensiya
           </h1>
-          <p className="mt-3 font-display font-bold text-foreground sm:text-5xl text-balance text-4xl">
-            Silent Sleep — uyqu apnoesi, xurrak va respirator tibbiyot bo'yicha
-            global yechimlarni klinik mukammallik orqali ilgari surish.
+          <p className="mt-4 text-lg text-muted-foreground text-balance">
+            Uyqu tibbiyoti va apnologiya bo'yicha I O'zbekiston xalqaro ilmiy-amaliy konferensiyasi.
           </p>
 
           <div className="mt-10">
@@ -32,7 +31,16 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:shadow-glow"
             >
               Ro'yxatdan o'tish
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
             </a>
             <a
               href="#program"
@@ -44,9 +52,9 @@ export function Hero() {
 
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8 max-w-md">
             {[
-              ["24+", "Ma'ruzachilar"],
-              ["20", "Davlatlar"],
-              ["600+", "Ishtirokchilar"],
+              ["20+", "Ma'ruzachilar"],
+              ["5+", "Davlatlar"],
+              ["200+", "Ishtirokchilar"],
             ].map(([v, l]) => (
               <div key={l}>
                 <div className="font-display text-2xl font-bold text-primary">{v}</div>
@@ -57,22 +65,20 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-soft shadow-elegant">
+          <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-gradient-soft shadow-elegant">
             <img
-              src={airway}
-              alt="Inson nafas yo'llarining 3D anatomik tasviri"
+              src={heroMain}
+              alt="Konferensiya bosh tasviri"
               className="h-full w-full object-cover animate-float"
               width={1920}
               height={1440}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background/30 via-transparent to-transparent" />
-          </div>
-          <div className="absolute -bottom-6 -left-6 rounded-2xl border border-border bg-card/95 backdrop-blur px-5 py-4 shadow-soft hidden sm:block">
-            <div className="text-[10px] uppercase tracking-widest text-muted-foreground">Jonli Tadqiqot</div>
-            <div className="mt-1 font-display text-lg font-semibold text-foreground">Faringeal Dinamika</div>
+            <div className="absolute inset-0 bg-linear-to-t from-background/30 via-transparent to-transparent" />
           </div>
           <div className="absolute -top-4 -right-4 rounded-2xl border border-primary/20 bg-primary px-4 py-3 shadow-glow hidden sm:block">
-            <div className="text-[10px] uppercase tracking-widest text-primary-foreground/70">CME Soatlari</div>
+            <div className="text-[10px] uppercase tracking-widest text-primary-foreground/70">
+              CME Soatlari
+            </div>
             <div className="font-display text-xl font-bold text-primary-foreground">8 soat</div>
           </div>
         </div>

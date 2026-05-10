@@ -1,25 +1,26 @@
-import muzaffarovImg from "@/assets/muzaffarov.jpg";
+import s1 from "@/assets/speaker-1.jpg";
+import s2 from "@/assets/speaker-2.jpg";
+import s3 from "@/assets/speaker-3.webp";
+import s4 from "@/assets/speaker-4.webp";
+import s5 from "@/assets/speaker-5.webp";
+import s6 from "@/assets/speaker-6.jpg";
 
 const speakers = [
-  { name: "Muzaffarov Tuyg'unxon Akromovich", role: "Jonli tadqiqot mutaxassisi", image: muzaffarovImg },
-  { name: "Dr. Michael Okafor", role: "Johns Hopkins, AQSh", seed: "michael" },
-  { name: "Dr. Aleksei Petrov", role: "Charité Berlin, Germaniya", seed: "aleksei" },
-  { name: "Dr. Lina Tanaka", role: "Kioto Universiteti, Yaponiya", seed: "lina" },
-  { name: "Prof. Rainer Bauer", role: "Vena Tibbiyot, Avstriya", seed: "rainer" },
-  { name: "Dr. Sofia Mendes", role: "USP San-Paulo, Braziliya", seed: "sofia" },
-  { name: "Dr. Kyung Yoon", role: "Seul Milliy, Koreya", seed: "kyung" },
-  { name: "Dr. Nadia Hassan", role: "Imperial College London", seed: "nadia" },
+  { name: "Tuyg'unxon Muzaffarov", image: s1 },
+  { name: "Sherzod Gulyamov", image: s2 },
+  { name: "Vladimir Krivitskiy", image: s3 },
+  { name: "Roman Buzunov", image: s4 },
+  { name: "Maryam Jafarova", image: s5 },
+  { name: "Azizbek Urunov", image: s6 },
 ];
 
 export function Speakers() {
   return (
     <section id="speakers" className="relative overflow-hidden bg-secondary/40 py-24 sm:py-32">
-      {/* Medical minimalistic decorative elements */}
       <div className="pointer-events-none absolute inset-0 grid-pattern opacity-40" />
       <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl" />
       <div className="pointer-events-none absolute bottom-0 -left-32 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl" />
 
-      {/* ECG / heartbeat line */}
       <svg
         aria-hidden="true"
         className="pointer-events-none absolute left-0 right-0 top-16 mx-auto h-10 w-full max-w-4xl text-primary/30"
@@ -34,45 +35,31 @@ export function Speakers() {
       </svg>
 
       <div className="relative mx-auto max-w-7xl px-6 sm:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-3 py-1 backdrop-blur">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
-                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Mutaxassislar</span>
-            </div>
-            <h2 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-              Uyqu tibbiyotini shakllantiruvchi jahon ovozlari.
-            </h2>
-            <div className="mt-5 flex items-center gap-3">
-              <span className="h-px w-12 bg-primary/40" />
-              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Klinik mukammallik · 2026</span>
-            </div>
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/70 px-3 py-1 backdrop-blur">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-60" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              Mutaxassislar
+            </span>
           </div>
-          <a href="#" className="group inline-flex items-center gap-2 text-sm font-semibold text-primary">
-            <span className="border-b border-primary/30 pb-0.5 transition-colors group-hover:border-primary">Barcha mutaxassislar</span>
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </a>
+          <h2 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
+            Konferensiyamiz ma'ruzachilari
+          </h2>
         </div>
 
         <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+          {/* 6 visible speakers */}
           {speakers.map((s) => (
             <div key={s.name} className="group text-center">
               <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
-                {/* Subtle medical cross marker */}
-                <div className="absolute -top-1 -right-1 z-10 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-background shadow-soft opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary" strokeLinecap="round">
-                    <path d="M6 1v10M1 6h10" />
-                  </svg>
-                </div>
-                {/* Decorative concentric ring */}
                 <div className="absolute inset-[-10px] rounded-full border border-dashed border-primary/15 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40" />
                 <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-border transition-all duration-500 group-hover:ring-2 group-hover:ring-primary group-hover:-translate-y-1">
                   <img
-                    src={s.image ?? `https://i.pravatar.cc/400?img=${(s.seed?.length ?? 0) + 10}`}
+                    src={s.image}
                     alt={s.name}
                     loading="lazy"
                     width={400}
@@ -81,15 +68,36 @@ export function Speakers() {
                   />
                 </div>
               </div>
-              <div className="mt-5 font-display text-base font-semibold text-foreground">{s.name}</div>
+              <div className="mt-5 font-display text-base font-semibold text-foreground">
+                {s.name}
+              </div>
               <div className="mx-auto mt-2 h-px w-8 bg-primary/30" />
-              <div className="mt-2 text-xs text-muted-foreground">{s.role}</div>
-              <button className="mt-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-background px-4 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-foreground transition-all hover:border-primary hover:text-primary">
-                <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M6 1v10M1 6h10" />
-                </svg>
-                Bio
-              </button>
+            </div>
+          ))}
+
+          {/* 2 blurred "coming soon" placeholders */}
+          {[0, 1].map((i) => (
+            <div key={`tba-${i}`} className="text-center">
+              <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
+                {/* Blurred silhouette */}
+                <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-border blur-sm">
+                  <div className="h-full w-full bg-gradient-to-br from-primary/20 to-teal/20" />
+                  <div className="absolute inset-0 flex items-end justify-center pb-4">
+                    <div className="h-20 w-16 rounded-t-full bg-primary/15" />
+                  </div>
+                  <div className="absolute top-6 left-1/2 -translate-x-1/2 h-12 w-12 rounded-full bg-primary/20" />
+                </div>
+                {/* Overlay text */}
+                <div className="absolute inset-0 flex items-center justify-center rounded-full">
+                  <span className="font-display text-[11px] font-bold uppercase tracking-widest text-foreground/60 text-center leading-snug px-3">
+                    Va boshqalar tez kunda e'lon qilinadi
+                  </span>
+                </div>
+              </div>
+              <div className="mt-5 font-display text-base font-semibold text-muted-foreground/50">
+                • • •
+              </div>
+              <div className="mx-auto mt-2 h-px w-8 bg-border" />
             </div>
           ))}
         </div>
