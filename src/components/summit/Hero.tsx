@@ -12,7 +12,7 @@ export function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            O'zbekiston, Toshkent · 10.10.2026
+            O'zbekiston, Toshkent · 28–29.11.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
             Xalqaro Konferensiya

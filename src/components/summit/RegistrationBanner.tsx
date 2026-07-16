@@ -3,7 +3,7 @@ const items = [
   "REGISTRATION NOW OPEN",
   "Joylar CHEKLANGAN — bugun ro'yxatdan o'ting!",
   "Limited seats available — register today!",
-  "10.10.2026 · Toshkent, O'zbekiston",
+  "28–29.11.2026 · Toshkent, O'zbekiston",
 ];
 
 const repeated = [...items, ...items];

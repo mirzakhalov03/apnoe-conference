@@ -17,7 +17,7 @@ There is no test suite.
 
 ## Architecture
 
-Single-page conference site for the first Uzbekistan international sleep medicine and apnology conference (10.10.2026, Toshkent). All content is in Uzbek.
+Single-page conference site for the first Uzbekistan international sleep medicine and apnology conference (28–29.11.2026, Toshkent). All content is in Uzbek.
 
 **Stack:** React 19 + TypeScript, TanStack Router (file-based), TanStack Start (SSR), Vite 7, Tailwind CSS v4, Radix UI / shadcn-ui, Cloudflare Workers.
 

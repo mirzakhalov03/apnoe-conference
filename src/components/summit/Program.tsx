@@ -28,7 +28,7 @@ export function Program() {
             Ilmiy Dastur
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Bir kun. Bir maqsad. Yaxshiroq uyqu tibbiyoti.
+            Ikki kun. Bir maqsad. Yaxshiroq uyqu tibbiyoti.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Fundamental fan, jarrohlik innovatsiyalari va raqamli salomatlik bo'yicha tanlangan
@@ -40,8 +40,8 @@ export function Program() {
           <div className="relative pl-12 sm:pl-20">
             <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-glow">
               <div className="text-center leading-tight">
-                <div className="text-[10px] sm:text-xs font-bold">10</div>
-                <div className="text-[9px] sm:text-[10px]">OKT</div>
+                <div className="text-[10px] sm:text-xs font-bold">28–29</div>
+                <div className="text-[9px] sm:text-[10px]">NOY</div>
               </div>
             </div>
             <div className="w-full rounded-2xl border border-border bg-card p-6 shadow-soft">
@@ -49,7 +49,7 @@ export function Program() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <div className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    Yagona Kun · Dushanba
+                    Ikki Kun · Shanba–Yakshanba
                   </div>
                   <div className="mt-1 font-display text-xl sm:text-2xl font-semibold text-foreground">
                     Apnoe yechimlarining zamonaviy asoslari
