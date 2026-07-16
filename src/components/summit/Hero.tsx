@@ -1,4 +1,4 @@
-import heroMain from "@/assets/hero-main.jpg";
+import heroPoster from "@/assets/hero-uzapnea.jpg";
 import { Countdown } from "./Countdown";
 
 export function Hero() {
@@ -15,7 +15,8 @@ export function Hero() {
             O'zbekiston, Toshkent · 28–29.11.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
-            Xalqaro Konferensiya
+            <span className="block">1-UZAPNEA va OTOLOR 4</span>
+            <span className="block">KONFERENSIYASI</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
             Uyqu tibbiyoti va apnologiya bo'yicha I O'zbekiston xalqaro ilmiy-amaliy konferensiyasi.
@@ -65,15 +66,14 @@ export function Hero() {
         </div>
 
         <div className="relative">
-          <div className="relative aspect-4/3 overflow-hidden rounded-3xl bg-gradient-soft shadow-elegant">
+          <div className="relative aspect-square overflow-hidden rounded-3xl bg-gradient-soft shadow-elegant">
             <img
-              src={heroMain}
-              alt="Konferensiya bosh tasviri"
+              src={heroPoster}
+              alt="1-UZAPNEA 2026 — O'zbekistondagi birinchi uyqu tibbiyoti anjumani. OTOLOR 4 konferensiyasi."
               className="h-full w-full object-cover animate-float"
-              width={1920}
-              height={1440}
+              width={640}
+              height={640}
             />
-            <div className="absolute inset-0 bg-linear-to-t from-background/30 via-transparent to-transparent" />
           </div>
           <div className="absolute -top-4 -right-4 rounded-2xl border border-primary/20 bg-primary px-4 py-3 shadow-glow hidden sm:block">
             <div className="text-[10px] uppercase tracking-widest text-primary-foreground/70">
