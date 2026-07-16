@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm run dev          # start dev server
-npm run build        # production build (Cloudflare Workers target)
+npm run build        # production build + static pre-render (Vercel target)
 npm run build:dev    # development build
 npm run preview      # preview production build locally
 npm run lint         # ESLint
@@ -19,7 +19,7 @@ There is no test suite.
 
 Single-page conference site for the first Uzbekistan international sleep medicine and apnology conference (28–29.11.2026, Toshkent). All content is in Uzbek.
 
-**Stack:** React 19 + TypeScript, TanStack Router (file-based), TanStack Start (SSR), Vite 7, Tailwind CSS v4, Radix UI / shadcn-ui, Cloudflare Workers.
+**Stack:** React 19 + TypeScript, TanStack Router (file-based), TanStack Start (SSR), Vite 7, Tailwind CSS v4, Radix UI / shadcn-ui. Deployed as a static pre-rendered site on Vercel.
 
 **Page structure:** The single route `src/routes/index.tsx` composes all sections in order: `Header → Hero → Program → Speakers → Register → Sponsors → Footer`. Each section lives in `src/components/summit/`.
 
@@ -47,4 +47,10 @@ Pass any extra Vite config via `defineConfig({ vite: { ... } })`.
 
 ## Deployment
 
-Deploys to Cloudflare Workers. Config is in `wrangler.jsonc`. The server entry point is `@tanstack/react-start/server-entry` (do not change).
+Deploys to Vercel as a **static site** — there is no server at runtime.
+
+`npm run build` runs `vite build`, then `scripts/prerender.mjs` boots the built TanStack Start server in-process, fetches `/`, and writes the resulting SSR HTML to `dist/client/index.html`. `vercel.json` serves `dist/client` and rewrites all paths to `/index.html` so client-side routing survives a hard refresh.
+
+Because the page is pre-rendered at build time, **any content change requires a rebuild to appear** — including anything in the `<head>` from `src/routes/__root.tsx`.
+
+The Cloudflare Workers adapter is disabled (`cloudflare: false` in `vite.config.ts`). `wrangler.jsonc` is a leftover from that setup and is not used.

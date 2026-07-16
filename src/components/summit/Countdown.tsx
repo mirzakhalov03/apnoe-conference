@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
-const TARGET = new Date("2026-11-28T09:00:00Z").getTime();
+// 09:00 Toshkent (UTC+5) — the first session's start time.
+const TARGET = new Date("2026-11-28T04:00:00Z").getTime();
 
 function diff(now: number) {
   const d = Math.max(0, TARGET - now);

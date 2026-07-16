@@ -38,7 +38,8 @@ export const Route = createRootRoute({
       { property: "og:title", content: "Silent Sleep Xalqaro Sammiti 2026" },
       {
         property: "og:description",
-        content: "Apnoe yechimlarini ilgari surish — xalqaro tibbiyot sammiti, Toshkent.",
+        content:
+          "Apnoe yechimlarini ilgari surish — xalqaro tibbiyot sammiti. 28–29 noyabr 2026, Toshkent.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
