@@ -15,11 +15,11 @@ export function Hero() {
             O'zbekiston, Toshkent · 28–29.11.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
-            <span className="block">1-UZAPNEA va OTOLOR 4</span>
+            <span className="block">Birinchi UZAPNEA va OTOLOR 4</span>
             <span className="block">KONFERENSIYASI</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
-            Uyqu tibbiyoti va apnologiya bo'yicha I O'zbekiston xalqaro ilmiy-amaliy konferensiyasi.
+            O'zbekiston xalqaro ilmiy-amaliy konferensiyasi.
           </p>
 
           <div className="mt-10">

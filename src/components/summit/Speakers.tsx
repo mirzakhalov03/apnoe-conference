@@ -3,8 +3,10 @@ import s2 from "@/assets/speaker-2.jpg";
 import s3 from "@/assets/speaker-3.webp";
 import s4 from "@/assets/speaker-4.webp";
 import s5 from "@/assets/speaker-5.webp";
+// `position` biases the square crop for portrait source images, whose heads
+// sit above the centre and would otherwise be cut off. Defaults to centred.
 const speakers = [
-  { name: "Tuyg'unxon Muzaffarov", image: s1 },
+  { name: "Tuyg'unxon Muzaffarov", image: s1, position: "object-top" },
   { name: "Sherzod Gulyamov", image: s2 },
   { name: "Vladimir Krivitskiy", image: s3 },
   { name: "Roman Buzunov", image: s4 },
@@ -61,7 +63,7 @@ export function Speakers() {
                     loading="lazy"
                     width={400}
                     height={400}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className={`h-full w-full object-cover ${s.position ?? "object-center"} transition-transform duration-700 group-hover:scale-105`}
                   />
                 </div>
               </div>
