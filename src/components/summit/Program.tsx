@@ -15,8 +15,27 @@ const sessions = [
     icon: "⚡",
   },
   { time: "16:00", title: "CPAP terapiyasi ustaxonasi", speaker: "Dr. L. Tanaka", icon: "💨" },
-  { time: "17:30", title: "AI va uyqu fenotiplash", speaker: "Dr. N. Hassan", icon: "🧠" },
-  { time: "18:30", title: "Yopilish simpoziumi", speaker: "Barcha mutaxassislar", icon: "🎓" },
+];
+
+const days = [
+  {
+    day: "28",
+    month: "NOY",
+    label: "1-kun · Shanba",
+    track: "UZAPNEA",
+    title: "Uyqu apnoesi va xurrak",
+    description:
+      "O'zbekistonda ilk bor xurrak va uyqu apnoesiga bag'ishlangan konferensiya kuni: diagnostika, jarrohlik va terapiya yechimlari.",
+  },
+  {
+    day: "29",
+    month: "NOY",
+    label: "2-kun · Yakshanba",
+    track: "OTOLOR 4",
+    title: "Xalqaro ma'ruzalar",
+    description:
+      "«OTOLOR 4» xalqaro konferensiyasi: chet ellik mutaxassislarning otorinolaringologiya bo'yicha ma'ruzalari.",
+  },
 ];
 
 export function Program() {
@@ -28,74 +47,81 @@ export function Program() {
             Ilmiy Dastur
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Ikki kun. Bir maqsad. Yaxshiroq uyqu tibbiyoti.
+            2 kun, bir maqsad.
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Fundamental fan, jarrohlik innovatsiyalari va raqamli salomatlik bo'yicha tanlangan
-            sessiyalar.
+            1-kun UZAPNEA — uyqu apnoesi va xurrak. 2-kun OTOLOR 4 — xalqaro ma'ruzalar.
           </p>
         </div>
 
-        <div className="mt-16 relative">
-          <div className="relative pl-12 sm:pl-20">
-            <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-glow">
-              <div className="text-center leading-tight">
-                <div className="text-[10px] sm:text-xs font-bold">28–29</div>
-                <div className="text-[9px] sm:text-[10px]">NOY</div>
-              </div>
-            </div>
-            <div className="w-full rounded-2xl border border-border bg-card p-6 shadow-soft">
-              {/* Visible header */}
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <div className="text-xs font-semibold uppercase tracking-widest text-primary">
-                    Ikki Kun · Shanba–Yakshanba
-                  </div>
-                  <div className="mt-1 font-display text-xl sm:text-2xl font-semibold text-foreground">
-                    Apnoe yechimlarining zamonaviy asoslari
-                  </div>
+        <div className="mt-16 relative grid gap-10">
+          {days.map((d) => (
+            <div key={d.day} className="relative pl-12 sm:pl-20">
+              <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-glow">
+                <div className="text-center leading-tight">
+                  <div className="text-[10px] sm:text-xs font-bold">{d.day}</div>
+                  <div className="text-[9px] sm:text-[10px]">{d.month}</div>
                 </div>
               </div>
-
-              {/* Blurred sessions with overlay */}
-              <div className="relative mt-6 border-t border-border pt-5">
-                {/* Actual content — blurred */}
-                <div className="pointer-events-none select-none blur-md">
-                  <div className="grid gap-3">
-                    {sessions.map((s) => (
-                      <div
-                        key={s.time}
-                        className="grid grid-cols-[64px_36px_1fr] sm:grid-cols-[80px_44px_1fr] items-center gap-4 rounded-xl px-3 py-3"
-                      >
-                        <div className="font-display text-sm font-semibold text-primary tabular-nums">
-                          {s.time}
-                        </div>
-                        <div className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-pale-blue text-lg">
-                          {s.icon}
-                        </div>
-                        <div>
-                          <div className="font-medium text-foreground">{s.title}</div>
-                          <div className="text-xs text-muted-foreground">{s.speaker}</div>
-                        </div>
-                      </div>
-                    ))}
+              <div className="w-full rounded-2xl border border-border bg-card p-6 shadow-soft">
+                {/* Visible header */}
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-widest text-primary">
+                      {d.label}
+                    </div>
+                    <div className="mt-1 flex flex-wrap items-center gap-3">
+                      <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-3 py-1 font-display text-xs font-bold uppercase tracking-[0.14em] text-primary">
+                        {d.track}
+                      </span>
+                      <span className="font-display text-xl sm:text-2xl font-semibold text-foreground">
+                        {d.title}
+                      </span>
+                    </div>
+                    <p className="mt-3 max-w-2xl text-sm text-muted-foreground">{d.description}</p>
                   </div>
                 </div>
 
-                {/* "Tez kunda" overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
-                  <div className="rounded-full border border-primary/30 bg-background/80 backdrop-blur-sm px-8 py-3 shadow-elegant">
-                    <span className="font-display text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-                      Tez kunda
+                {/* Blurred sessions with overlay */}
+                <div className="relative mt-6 border-t border-border pt-5">
+                  {/* Actual content — blurred */}
+                  <div className="pointer-events-none select-none blur-md">
+                    <div className="grid gap-3">
+                      {sessions.map((s) => (
+                        <div
+                          key={s.time}
+                          className="grid grid-cols-[64px_36px_1fr] sm:grid-cols-[80px_44px_1fr] items-center gap-4 rounded-xl px-3 py-3"
+                        >
+                          <div className="font-display text-sm font-semibold text-primary tabular-nums">
+                            {s.time}
+                          </div>
+                          <div className="flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-lg bg-pale-blue text-lg">
+                            {s.icon}
+                          </div>
+                          <div>
+                            <div className="font-medium text-foreground">{s.title}</div>
+                            <div className="text-xs text-muted-foreground">{s.speaker}</div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* "Tez kunda" overlay */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2">
+                    <div className="rounded-full border border-primary/30 bg-background/80 backdrop-blur-sm px-8 py-3 shadow-elegant">
+                      <span className="font-display text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+                        Tez kunda
+                      </span>
+                    </div>
+                    <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
+                      Dastur tez orada e'lon qilinadi
                     </span>
                   </div>
-                  <span className="text-xs font-medium uppercase tracking-widest text-muted-foreground">
-                    Dastur tez orada e'lon qilinadi
-                  </span>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

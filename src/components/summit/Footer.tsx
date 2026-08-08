@@ -27,8 +27,8 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-md text-sm text-muted-foreground">
-              Uyqu apnoesi uchun zamonaviy yechimlarni rivojlantirish maqsadida butun dunyo
-              shifokorlari, tadqiqotchilari va innovatorlarini birlashtiradigan konferensiya.
+              O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR
+              4» xalqaro konferensiyasi bilan birga. 2 kun, bir maqsad.
             </p>
           </div>
 
@@ -38,13 +38,11 @@ export function Footer() {
               Manzil
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              CAU Event Hall
+              EMU instituti
               <br />
-              264 Milliy Bog' St
+              Toshkent, O'zbekiston
               <br />
-              Tashkent, 111221
-              <br />
-              Tashkent Region, O'zbekiston
+              28–29-noyabr 2026
             </p>
           </div>
 
@@ -55,6 +53,17 @@ export function Footer() {
             </div>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>+998 77 118 38 83</p>
+              <p>
+                Ro'yxatdan o'tish:{" "}
+                <a
+                  href="https://t.me/OtolorAcademyBot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-primary hover:underline"
+                >
+                  @OtolorAcademyBot
+                </a>
+              </p>
             </div>
 
             {/* Social links */}

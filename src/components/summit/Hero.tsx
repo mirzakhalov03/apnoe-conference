@@ -12,15 +12,24 @@ export function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            O'zbekiston, Toshkent · 28–29.11.2026
+            EMU instituti, Toshkent · 28–29.11.2026
           </div>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
             <span className="block">1-UZAPNEA va OTOLOR 4</span>
             <span className="block">KONFERENSIYASI</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
-            O'zbekiston xalqaro ilmiy-amaliy konferensiyasi.
+            O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4»
+            xalqaro konferensiyasi bilan birga.
           </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              1-kun · UZAPNEA — uyqu apnoesi va xurrak
+            </span>
+            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              2-kun · OTOLOR 4 — xalqaro ma'ruzalar
+            </span>
+          </div>
 
           <div className="mt-10">
             <Countdown />
@@ -28,7 +37,9 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#register"
+              href="https://t.me/OtolorAcademyBot"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:shadow-glow"
             >
               Ro'yxatdan o'tish
@@ -44,12 +55,16 @@ export function Hero() {
               </svg>
             </a>
             <a
-              href="#program"
+              href="#register"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
             >
-              Dasturni ko'rish
+              Narxlarni ko'rish
             </a>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Erta narx 1-oktabrgacha — standart{" "}
+            <strong className="text-foreground">800 000 so'm</strong>. Joylar cheklangan.
+          </p>
 
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8 max-w-md">
             {[

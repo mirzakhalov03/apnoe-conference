@@ -6,10 +6,13 @@ import { RegistrationBanner } from "./RegistrationBanner";
 const links = [
   { href: "#program", label: "Dastur" },
   { href: "#speakers", label: "Ma'ruzachilar" },
+  { href: "#register", label: "Narxlar" },
   { href: "#venue", label: "Manzil" },
   { href: "#sponsors", label: "Hamkorlar" },
   { href: "#contact", label: "Aloqa" },
 ];
+
+const TELEGRAM_BOT = "https://t.me/OtolorAcademyBot";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +50,7 @@ export function Header() {
             </div>
           </div>
         </a>
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
@@ -59,7 +62,9 @@ export function Header() {
           ))}
         </nav>
         <a
-          href="#register"
+          href={TELEGRAM_BOT}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5"
         >
           Ro'yxatdan o'tish
@@ -95,7 +100,9 @@ export function Header() {
               </a>
             ))}
             <a
-              href="#register"
+              href={TELEGRAM_BOT}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
             >

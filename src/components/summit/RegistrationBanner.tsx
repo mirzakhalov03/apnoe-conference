@@ -1,9 +1,9 @@
 const items = [
-  "RO'YXATDAN O'TISH OCHIQ",
-  "REGISTRATION NOW OPEN",
+  "RO'YXATDAN O'TISH OCHILDI — ERTA NARX (EARLY BIRD)",
+  "Erta narx 1-oktabrgacha · Standart 800 000 so'm",
   "Joylar CHEKLANGAN — bugun ro'yxatdan o'ting!",
   "Limited seats available — register today!",
-  "28–29.11.2026 · Toshkent, O'zbekiston",
+  "28–29.11.2026 · EMU instituti, Toshkent",
 ];
 
 const repeated = [...items, ...items];

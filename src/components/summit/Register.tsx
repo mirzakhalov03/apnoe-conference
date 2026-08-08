@@ -1,32 +1,37 @@
+const TELEGRAM_BOT = "https://t.me/OtolorAcademyBot";
+
 const tiers = [
   {
-    name: "Erta Ro'yxat",
-    price: "400 000 so'm",
-    note: "30 iyungacha",
-    features: [
-      "Barcha sessiyalar",
-      "Kutib olish marosimi",
-      "Konferensiya materiallari",
-      "Sertifikatlar",
-    ],
+    name: "Ordinator va magistrlar",
+    price: "500 000 so'm",
+    regularPrice: "800 000 so'm",
+    note: "ID talab qilinadi",
+    features: ["Ikkala kun sessiyalari", "Konferensiya materiallari", "Sertifikat"],
   },
   {
     name: "Standart",
-    price: "600 000 so'm",
+    price: "800 000 so'm",
+    regularPrice: "1 100 000 so'm",
     note: "Eng mashhur",
     features: [
-      "Barcha sessiyalar",
+      "Ikkala kun sessiyalari",
       "Kutib olish marosimi",
       "Konferensiya materiallari",
-      "Sertifikatlar",
+      "Sertifikat",
     ],
     featured: true,
   },
   {
-    name: "Ordinator va Magistrlar",
-    price: "300 000 so'm",
-    note: "ID talab qilinadi",
-    features: ["Barcha sessiyalar", "Kutib olish marosimi", "Konferensiya materiallari"],
+    name: "Chet ellik ishtirokchilar",
+    price: "1 000 000 so'm",
+    regularPrice: "1 500 000 so'm",
+    note: "Xalqaro ishtirokchilar",
+    features: [
+      "Ikkala kun sessiyalari",
+      "Kutib olish marosimi",
+      "Konferensiya materiallari",
+      "Sertifikat",
+    ],
   },
 ];
 
@@ -37,11 +42,14 @@ export function Register() {
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-            Ro'yxatdan o'tish
+            Ro'yxatdan o'tish ochildi
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            O'z o'rningizni band qiling.
+            Erta narx — 1-oktabrgacha.
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground text-balance">
+            Joylar cheklangan. 1-oktabrdan keyin narxlar oshadi.
+          </p>
         </div>
 
         <div className="mt-16 grid gap-6 lg:grid-cols-3">
@@ -57,6 +65,11 @@ export function Register() {
               </div>
               <div className="mt-2 font-display text-2xl font-semibold">{t.name}</div>
               <div className="mt-6 font-display text-4xl font-bold tracking-tight">{t.price}</div>
+              <div
+                className={`mt-2 text-sm ${t.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}
+              >
+                1-oktabrdan <span className="line-through decoration-2">{t.regularPrice}</span>
+              </div>
               <ul
                 className={`mt-8 space-y-3 text-sm ${t.featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}
               >
@@ -77,7 +90,7 @@ export function Register() {
                 ))}
               </ul>
               <a
-                href="https://t.me/OtolorAcademyBot"
+                href={TELEGRAM_BOT}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`mt-10 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}
@@ -87,6 +100,18 @@ export function Register() {
             </div>
           ))}
         </div>
+
+        <p className="mt-10 text-center text-sm text-muted-foreground">
+          Ro'yxatdan o'tish Telegram bot orqali amalga oshiriladi:{" "}
+          <a
+            href={TELEGRAM_BOT}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-primary hover:underline"
+          >
+            @OtolorAcademyBot
+          </a>
+        </p>
       </div>
     </section>
   );
