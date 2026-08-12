@@ -5,7 +5,7 @@ import { Countdown } from "./Countdown";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-40 sm:pt-48 pb-20 sm:pb-28">
-      <div className="absolute inset-0 grid-pattern grid-fade" />
+      <div className="absolute inset-0 grid-pattern texture-fade" />
       <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl animate-drift" />
       <div className="absolute -bottom-40 -left-40 h-[420px] w-[420px] rounded-full bg-teal/20 blur-3xl animate-drift-slow" />
 

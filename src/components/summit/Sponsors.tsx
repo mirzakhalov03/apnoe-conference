@@ -13,7 +13,7 @@ export function Sponsors() {
       id="sponsors"
       className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade opacity-70" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[320px] w-[620px] max-w-full -translate-x-1/2 rounded-full bg-primary/5 blur-3xl animate-drift-slow" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8 text-center">
         <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
           Hamkorlar va Homiylar

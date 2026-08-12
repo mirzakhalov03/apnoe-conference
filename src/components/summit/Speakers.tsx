@@ -19,7 +19,7 @@ export function Speakers() {
       id="speakers"
       className="relative scroll-mt-28 overflow-hidden bg-secondary/40 py-24 sm:scroll-mt-32 sm:py-32"
     >
-      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      <div className="pointer-events-none absolute inset-0 dot-pattern texture-fade" />
       <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl animate-drift" />
       <div className="pointer-events-none absolute bottom-0 -left-32 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl animate-drift-slow" />
 

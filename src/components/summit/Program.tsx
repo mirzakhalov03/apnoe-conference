@@ -44,8 +44,9 @@ export function Program() {
       id="program"
       className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-32"
     >
-      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      {/* No repeating texture here — the timeline cards carry this section. */}
       <div className="pointer-events-none absolute -right-40 top-1/4 h-[380px] w-[380px] rounded-full bg-primary/5 blur-3xl animate-drift-slow" />
+      <div className="pointer-events-none absolute -left-32 bottom-1/4 h-[300px] w-[300px] rounded-full bg-teal/10 blur-3xl animate-drift" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">

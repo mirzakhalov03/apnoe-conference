@@ -12,7 +12,7 @@ export function Venue() {
       id="venue"
       className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-32"
     >
-      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      <div className="pointer-events-none absolute inset-0 grid-pattern texture-fade" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl animate-drift" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="max-w-2xl">

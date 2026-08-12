@@ -42,7 +42,7 @@ export function Register() {
       className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-32"
     >
       <div className="absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-secondary/40 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      <div className="pointer-events-none absolute inset-0 dot-pattern texture-fade" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
