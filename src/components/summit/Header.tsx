@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/apnologlar-logo.png";
 import otolor from "@/assets/otolor-logo.jpg";
+import { TELEGRAM_REGISTER_URL } from "@/lib/site";
 import { RegistrationBanner } from "./RegistrationBanner";
 
 const links = [
@@ -11,8 +12,6 @@ const links = [
   { href: "#sponsors", label: "Hamkorlar" },
   { href: "#contact", label: "Aloqa" },
 ];
-
-const TELEGRAM_BOT = "https://t.me/OtolorAcademyBot";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -62,7 +61,7 @@ export function Header() {
           ))}
         </nav>
         <a
-          href={TELEGRAM_BOT}
+          href={TELEGRAM_REGISTER_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5"
@@ -100,7 +99,7 @@ export function Header() {
               </a>
             ))}
             <a
-              href={TELEGRAM_BOT}
+              href={TELEGRAM_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

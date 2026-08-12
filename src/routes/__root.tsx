@@ -33,13 +33,13 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4» xalqaro konferensiyasi bilan birga. 28–29-noyabr 2026, EMU instituti, Toshkent. Erta narx 1-oktabrgacha.",
+          "O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4» xalqaro konferensiyasi bilan birga. 28–29-noyabr 2026, EMU University, Toshkent. Erta narx 1-oktabrgacha.",
       },
       { property: "og:title", content: "1-UZAPNEA va OTOLOR 4 konferensiyasi — 2026" },
       {
         property: "og:description",
         content:
-          "2 kun, bir maqsad. 1-kun UZAPNEA — uyqu apnoesi va xurrak, 2-kun OTOLOR 4 — xalqaro ma'ruzalar. 28–29-noyabr 2026, EMU instituti, Toshkent.",
+          "2 kun, bir maqsad. 1-kun UZAPNEA — uyqu apnoesi va xurrak, 2-kun OTOLOR 4 — xalqaro ma'ruzalar. 28–29-noyabr 2026, EMU University, Toshkent.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

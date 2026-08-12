@@ -15,10 +15,13 @@ const speakers = [
 
 export function Speakers() {
   return (
-    <section id="speakers" className="relative overflow-hidden bg-secondary/40 py-24 sm:py-32">
-      <div className="pointer-events-none absolute inset-0 grid-pattern opacity-40" />
-      <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 -left-32 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl" />
+    <section
+      id="speakers"
+      className="relative scroll-mt-28 overflow-hidden bg-secondary/40 py-24 sm:scroll-mt-32 sm:py-32"
+    >
+      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      <div className="pointer-events-none absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl animate-drift" />
+      <div className="pointer-events-none absolute bottom-0 -left-32 h-[360px] w-[360px] rounded-full bg-teal/10 blur-3xl animate-drift-slow" />
 
       <svg
         aria-hidden="true"
@@ -49,7 +52,7 @@ export function Speakers() {
           </h2>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="reveal mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {/* 6 visible speakers */}
           {speakers.map((s) => (
             <div key={s.name} className="group text-center">

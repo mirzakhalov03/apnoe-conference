@@ -1,5 +1,6 @@
 import apnologlarLogo from "@/assets/apnologlar-logo.png";
 import otolor from "@/assets/otolor-logo.jpg";
+import { TELEGRAM_BOT_HANDLE, TELEGRAM_REGISTER_URL, VENUE_NAME } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -33,17 +34,23 @@ export function Footer() {
           </div>
 
           {/* Venue */}
-          <div id="venue">
+          <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-foreground">
               Manzil
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-              EMU instituti
+              {VENUE_NAME}
               <br />
               Toshkent, O'zbekiston
               <br />
               28–29-noyabr 2026
             </p>
+            <a
+              href="#venue"
+              className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
+            >
+              Xaritada ko'rish
+            </a>
           </div>
 
           {/* Contact */}
@@ -56,12 +63,12 @@ export function Footer() {
               <p>
                 Ro'yxatdan o'tish:{" "}
                 <a
-                  href="https://t.me/OtolorAcademyBot"
+                  href={TELEGRAM_REGISTER_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-primary hover:underline"
                 >
-                  @OtolorAcademyBot
+                  {TELEGRAM_BOT_HANDLE}
                 </a>
               </p>
             </div>

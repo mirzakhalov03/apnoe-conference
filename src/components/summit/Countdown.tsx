@@ -30,7 +30,8 @@ export function Countdown() {
     <div className="flex gap-3 sm:gap-5">
       {items.map(([label, val]) => (
         <div key={label} className="flex flex-col items-center">
-          <div className="min-w-[68px] sm:min-w-[88px] rounded-2xl border border-border bg-card px-3 py-3 sm:px-5 sm:py-4 shadow-soft">
+          <div className="relative min-w-[68px] overflow-hidden rounded-2xl border border-primary/15 bg-linear-to-b from-card to-pale-blue/50 px-3 py-3 shadow-soft transition-shadow duration-300 hover:shadow-elegant sm:min-w-[88px] sm:px-5 sm:py-4">
+            <span className="absolute inset-x-0 top-0 h-[3px] bg-gradient-primary" />
             <div className="font-display text-3xl sm:text-5xl font-bold tabular-nums text-primary">
               {String(val).padStart(2, "0")}
             </div>

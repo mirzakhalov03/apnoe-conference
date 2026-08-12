@@ -4,6 +4,7 @@ import { Hero } from "@/components/summit/Hero";
 import { Program } from "@/components/summit/Program";
 import { Speakers } from "@/components/summit/Speakers";
 import { Register } from "@/components/summit/Register";
+import { Venue } from "@/components/summit/Venue";
 import { Sponsors } from "@/components/summit/Sponsors";
 import { Footer } from "@/components/summit/Footer";
 
@@ -19,6 +20,7 @@ function Index() {
       <Program />
       <Speakers />
       <Register />
+      <Venue />
       <Sponsors />
       <Footer />
     </main>

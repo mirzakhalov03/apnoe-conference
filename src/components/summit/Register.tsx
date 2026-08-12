@@ -1,4 +1,4 @@
-const TELEGRAM_BOT = "https://t.me/OtolorAcademyBot";
+import { TELEGRAM_BOT_HANDLE, TELEGRAM_REGISTER_URL } from "@/lib/site";
 
 const tiers = [
   {
@@ -37,8 +37,12 @@ const tiers = [
 
 export function Register() {
   return (
-    <section id="register" className="relative py-24 sm:py-32">
+    <section
+      id="register"
+      className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-32"
+    >
       <div className="absolute inset-x-0 top-0 h-1/2 bg-linear-to-b from-secondary/40 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
@@ -52,51 +56,57 @@ export function Register() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-3">
+        <div className="reveal mt-16 grid gap-6 lg:grid-cols-3">
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`relative rounded-3xl border p-8 transition-all ${t.featured ? "border-primary bg-primary text-primary-foreground shadow-elegant lg:-translate-y-4" : "border-border bg-card shadow-soft hover:-translate-y-1 hover:shadow-elegant"}`}
+              className={`relative overflow-hidden rounded-3xl border p-8 transition-all duration-300 ${t.featured ? "border-primary bg-gradient-primary text-primary-foreground shadow-elegant lg:-translate-y-4 lg:hover:-translate-y-5" : "border-border bg-card/80 shadow-soft backdrop-blur-sm hover:-translate-y-1 hover:border-primary/40 hover:shadow-elegant"}`}
             >
-              <div
-                className={`text-xs font-semibold uppercase tracking-widest ${t.featured ? "text-primary-foreground/70" : "text-primary"}`}
-              >
-                {t.note}
+              {t.featured && (
+                <span className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-primary-foreground/10 blur-2xl" />
+              )}
+              {/* Sits above the decorative glow, which is absolutely positioned. */}
+              <div className="relative">
+                <div
+                  className={`text-xs font-semibold uppercase tracking-widest ${t.featured ? "text-primary-foreground/70" : "text-primary"}`}
+                >
+                  {t.note}
+                </div>
+                <div className="mt-2 font-display text-2xl font-semibold">{t.name}</div>
+                <div className="mt-6 font-display text-4xl font-bold tracking-tight">{t.price}</div>
+                <div
+                  className={`mt-2 text-sm ${t.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}
+                >
+                  1-oktabrdan {t.regularPrice}
+                </div>
+                <ul
+                  className={`mt-8 space-y-3 text-sm ${t.featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}
+                >
+                  {t.features.map((f) => (
+                    <li key={f} className="flex items-center gap-3">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                      >
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={TELEGRAM_REGISTER_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-10 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}
+                >
+                  Ro'yxatdan o'tish
+                </a>
               </div>
-              <div className="mt-2 font-display text-2xl font-semibold">{t.name}</div>
-              <div className="mt-6 font-display text-4xl font-bold tracking-tight">{t.price}</div>
-              <div
-                className={`mt-2 text-sm ${t.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}
-              >
-                1-oktabrdan <span className="line-through decoration-2">{t.regularPrice}</span>
-              </div>
-              <ul
-                className={`mt-8 space-y-3 text-sm ${t.featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}
-              >
-                {t.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <path d="M5 12l5 5L20 7" />
-                    </svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={TELEGRAM_BOT}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mt-10 inline-flex w-full items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all ${t.featured ? "bg-background text-primary hover:bg-background/90" : "bg-primary text-primary-foreground hover:shadow-glow"}`}
-              >
-                Ro'yxatdan o'tish
-              </a>
             </div>
           ))}
         </div>
@@ -104,12 +114,12 @@ export function Register() {
         <p className="mt-10 text-center text-sm text-muted-foreground">
           Ro'yxatdan o'tish Telegram bot orqali amalga oshiriladi:{" "}
           <a
-            href={TELEGRAM_BOT}
+            href={TELEGRAM_REGISTER_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-primary hover:underline"
           >
-            @OtolorAcademyBot
+            {TELEGRAM_BOT_HANDLE}
           </a>
         </p>
       </div>

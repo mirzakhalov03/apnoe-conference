@@ -1,43 +1,36 @@
 import heroPoster from "@/assets/hero-uzapnea.jpg";
+import { TELEGRAM_REGISTER_URL } from "@/lib/site";
 import { Countdown } from "./Countdown";
 
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-40 sm:pt-48 pb-20 sm:pb-28">
-      <div className="absolute inset-0 grid-pattern opacity-60" />
-      <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 h-[420px] w-[420px] rounded-full bg-teal/20 blur-3xl" />
+      <div className="absolute inset-0 grid-pattern grid-fade" />
+      <div className="absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full bg-primary/10 blur-3xl animate-drift" />
+      <div className="absolute -bottom-40 -left-40 h-[420px] w-[420px] rounded-full bg-teal/20 blur-3xl animate-drift-slow" />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 sm:px-8 lg:grid-cols-2 lg:items-center">
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            EMU instituti, Toshkent · 28–29.11.2026
+            EMU University, Toshkent · 28–29.11.2026
           </div>
-          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] text-foreground sm:text-6xl lg:text-7xl text-balance">
-            <span className="block">1-UZAPNEA va OTOLOR 4</span>
+          {/* Sized so the long "KONFERENSIYASI" fits without clipping on 360px phones. */}
+          <h1 className="mt-6 font-display text-[2.15rem] font-bold leading-[1.05] text-foreground min-[420px]:text-[2.6rem] sm:text-6xl lg:text-7xl text-balance">
+            <span className="block text-gradient">1-UZAPNEA va OTOLOR 4</span>
             <span className="block">KONFERENSIYASI</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground text-balance">
             O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4»
             xalqaro konferensiyasi bilan birga.
           </p>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
-              1-kun · UZAPNEA — uyqu apnoesi va xurrak
-            </span>
-            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
-              2-kun · OTOLOR 4 — xalqaro ma'ruzalar
-            </span>
-          </div>
-
           <div className="mt-10">
             <Countdown />
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="https://t.me/OtolorAcademyBot"
+              href={TELEGRAM_REGISTER_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:shadow-glow"
@@ -61,16 +54,11 @@ export function Hero() {
               Narxlarni ko'rish
             </a>
           </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Erta narx 1-oktabrgacha — standart{" "}
-            <strong className="text-foreground">800 000 so'm</strong>. Joylar cheklangan.
-          </p>
-
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8 max-w-md">
             {[
               ["20+", "Ma'ruzachilar"],
               ["5+", "Davlatlar"],
-              ["200+", "Ishtirokchilar"],
+              ["600+", "Ishtirokchilar"],
             ].map(([v, l]) => (
               <div key={l}>
                 <div className="font-display text-2xl font-bold text-primary">{v}</div>

@@ -40,8 +40,13 @@ const days = [
 
 export function Program() {
   return (
-    <section id="program" className="relative py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-6 sm:px-8">
+    <section
+      id="program"
+      className="relative scroll-mt-28 overflow-hidden py-24 sm:scroll-mt-32 sm:py-32"
+    >
+      <div className="pointer-events-none absolute inset-0 grid-pattern grid-fade" />
+      <div className="pointer-events-none absolute -right-40 top-1/4 h-[380px] w-[380px] rounded-full bg-primary/5 blur-3xl animate-drift-slow" />
+      <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             Ilmiy Dastur
@@ -49,21 +54,26 @@ export function Program() {
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
             2 kun, bir maqsad.
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            1-kun UZAPNEA — uyqu apnoesi va xurrak. 2-kun OTOLOR 4 — xalqaro ma'ruzalar.
-          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              1-kun · UZAPNEA — uyqu apnoesi va xurrak
+            </span>
+            <span className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+              2-kun · OTOLOR 4 — xalqaro ma'ruzalar
+            </span>
+          </div>
         </div>
 
         <div className="mt-16 relative grid gap-10">
           {days.map((d) => (
-            <div key={d.day} className="relative pl-12 sm:pl-20">
-              <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-primary text-primary-foreground shadow-glow">
+            <div key={d.day} className="reveal relative pl-12 sm:pl-20">
+              <div className="absolute left-0 top-5 flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full border-2 border-primary bg-gradient-primary text-primary-foreground shadow-glow">
                 <div className="text-center leading-tight">
                   <div className="text-[10px] sm:text-xs font-bold">{d.day}</div>
                   <div className="text-[9px] sm:text-[10px]">{d.month}</div>
                 </div>
               </div>
-              <div className="w-full rounded-2xl border border-border bg-card p-6 shadow-soft">
+              <div className="w-full rounded-2xl border border-border bg-card/80 p-6 shadow-soft backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-elegant">
                 {/* Visible header */}
                 <div className="flex items-start justify-between gap-4">
                   <div>

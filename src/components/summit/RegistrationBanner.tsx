@@ -3,7 +3,7 @@ const items = [
   "Erta narx 1-oktabrgacha · Standart 800 000 so'm",
   "Joylar CHEKLANGAN — bugun ro'yxatdan o'ting!",
   "Limited seats available — register today!",
-  "28–29.11.2026 · EMU instituti, Toshkent",
+  "28–29.11.2026 · EMU University, Toshkent",
 ];
 
 const repeated = [...items, ...items];
