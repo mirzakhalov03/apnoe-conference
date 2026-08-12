@@ -1,8 +1,15 @@
-import { VENUE_MAP_EMBED_URL, VENUE_MAP_URL, VENUE_NAME } from "@/lib/site";
+import {
+  VENUE_DISTRICT,
+  VENUE_MAP_EMBED_URL,
+  VENUE_MAP_URL,
+  VENUE_NAME,
+  VENUE_STREET,
+} from "@/lib/site";
 
 const details = [
   { label: "Manzil", value: VENUE_NAME },
-  { label: "Shahar", value: "Toshkent, O'zbekiston" },
+  { label: "Ko'cha", value: VENUE_STREET },
+  { label: "Shahar", value: VENUE_DISTRICT },
   { label: "Sana", value: "28–29-noyabr 2026" },
 ];
 
@@ -68,7 +75,7 @@ export function Venue() {
               title={`${VENUE_NAME} — Yandex Xarita`}
               loading="lazy"
               allowFullScreen
-              className="block h-[300px] w-full border-0 sm:h-[380px] lg:h-full lg:min-h-[420px]"
+              className="block h-[360px] w-full border-0 sm:h-[440px] lg:h-full lg:min-h-[520px]"
             />
           </div>
         </div>

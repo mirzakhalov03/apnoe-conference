@@ -1,6 +1,12 @@
 import apnologlarLogo from "@/assets/apnologlar-logo.png";
 import otolor from "@/assets/otolor-logo.jpg";
-import { TELEGRAM_BOT_HANDLE, TELEGRAM_REGISTER_URL, VENUE_NAME } from "@/lib/site";
+import {
+  TELEGRAM_BOT_HANDLE,
+  TELEGRAM_REGISTER_URL,
+  VENUE_DISTRICT,
+  VENUE_NAME,
+  VENUE_STREET,
+} from "@/lib/site";
 
 export function Footer() {
   return (
@@ -41,7 +47,9 @@ export function Footer() {
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
               {VENUE_NAME}
               <br />
-              Toshkent, O'zbekiston
+              {VENUE_STREET}
+              <br />
+              {VENUE_DISTRICT}
               <br />
               28–29-noyabr 2026
             </p>
