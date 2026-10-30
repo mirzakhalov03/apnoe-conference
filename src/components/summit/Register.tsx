@@ -5,21 +5,18 @@ import { TELEGRAM_BOT_HANDLE, TELEGRAM_REGISTER_URL } from "@/lib/site";
 const tiers = [
   {
     id: "residents",
-    price: 500_000,
-    regularPrice: 800_000,
+    price: 800_000,
     features: ["bothDays", "materials", "certificate"],
   },
   {
     id: "standard",
-    price: 800_000,
-    regularPrice: 1_100_000,
+    price: 1_100_000,
     features: ["bothDays", "reception", "materials", "certificate"],
     featured: true,
   },
   {
     id: "international",
-    price: 1_000_000,
-    regularPrice: 1_500_000,
+    price: 1_500_000,
     features: ["bothDays", "reception", "materials", "certificate"],
   },
 ] as const;
@@ -66,11 +63,6 @@ export function Register() {
                   <div className="mt-2 font-display text-2xl font-semibold">{copy.name}</div>
                   <div className="mt-6 font-display text-4xl font-bold tracking-tight">
                     {t.common.price(tier.price)}
-                  </div>
-                  <div
-                    className={`mt-2 text-sm ${featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}
-                  >
-                    {t.register.regularPrice(t.common.price(tier.regularPrice))}
                   </div>
                   <ul
                     className={`mt-8 space-y-3 text-sm ${featured ? "text-primary-foreground/90" : "text-muted-foreground"}`}

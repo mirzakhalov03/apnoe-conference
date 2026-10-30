@@ -13,7 +13,7 @@ const uz = {
   meta: {
     title: "1-UZAPNEA va OTOLOR 4 konferensiyasi — 28–29-noyabr 2026, Toshkent",
     description:
-      "O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4» xalqaro konferensiyasi bilan birga. 28–29-noyabr 2026, EMU University, Toshkent. Erta narx 1-oktabrgacha.",
+      "O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4» xalqaro konferensiyasi bilan birga. 28–29-noyabr 2026, EMU University, Toshkent. Ro'yxatdan o'tish davom etmoqda.",
   },
   common: {
     register: "Ro'yxatdan o'tish",
@@ -40,8 +40,8 @@ const uz = {
   banner: {
     badge: "Muhim",
     items: [
-      "RO'YXATDAN O'TISH OCHILDI — ERTA NARX (EARLY BIRD)",
-      "Erta narx 1-oktabrgacha · Standart 800 000 so'm",
+      "RO'YXATDAN O'TISH DAVOM ETMOQDA",
+      "Standart ishtirok — 1 100 000 so'm",
       "Joylar CHEKLANGAN — bugun ro'yxatdan o'ting!",
       "Limited seats available — register today!",
       "28–29.11.2026 · EMU University, Toshkent",
@@ -113,9 +113,8 @@ const uz = {
   },
   register: {
     eyebrow: "Ro'yxatdan o'tish ochildi",
-    title: "Erta narx — 1-oktabrgacha.",
-    lead: "Joylar cheklangan. 1-oktabrdan keyin narxlar oshadi.",
-    regularPrice: (price: string) => `1-oktabrdan ${price}`,
+    title: "Joyingizni band qiling.",
+    lead: "Joylar cheklangan — ro'yxatdan o'tishni kechiktirmang.",
     tiers: {
       residents: { name: "Ordinator va magistrlar", note: "ID talab qilinadi" },
       standard: { name: "Standart", note: "Eng mashhur" },
@@ -178,7 +177,7 @@ const ru: Dictionary = {
   meta: {
     title: "Конференция 1-UZAPNEA и OTOLOR 4 — 28–29 ноября 2026, Ташкент",
     description:
-      "Впервые в Узбекистане — конференция, посвящённая храпу и апноэ сна, совместно с международной конференцией «OTOLOR 4». 28–29 ноября 2026, EMU University, Ташкент. Ранняя цена — до 1 октября.",
+      "Впервые в Узбекистане — конференция, посвящённая храпу и апноэ сна, совместно с международной конференцией «OTOLOR 4». 28–29 ноября 2026, EMU University, Ташкент. Регистрация продолжается.",
   },
   common: {
     register: "Зарегистрироваться",
@@ -205,8 +204,8 @@ const ru: Dictionary = {
   banner: {
     badge: "Важно",
     items: [
-      "РЕГИСТРАЦИЯ ОТКРЫТА — РАННЯЯ ЦЕНА (EARLY BIRD)",
-      "Ранняя цена до 1 октября · Стандарт 800 000 сум",
+      "РЕГИСТРАЦИЯ ПРОДОЛЖАЕТСЯ",
+      "Стандартное участие — 1 100 000 сум",
       "Количество мест ОГРАНИЧЕНО — зарегистрируйтесь сегодня!",
       "28–29.11.2026 · EMU University, Ташкент",
     ],
@@ -276,9 +275,8 @@ const ru: Dictionary = {
   },
   register: {
     eyebrow: "Регистрация открыта",
-    title: "Ранняя цена — до 1 октября.",
-    lead: "Количество мест ограничено. После 1 октября цены повышаются.",
-    regularPrice: (price) => `С 1 октября — ${price}`,
+    title: "Забронируйте своё место.",
+    lead: "Количество мест ограничено — не откладывайте регистрацию.",
     tiers: {
       residents: { name: "Ординаторы и магистранты", note: "Нужен подтверждающий документ" },
       standard: { name: "Стандарт", note: "Самый популярный" },
@@ -338,7 +336,7 @@ const en: Dictionary = {
   meta: {
     title: "1st UZAPNEA & OTOLOR 4 Conference — November 28–29, 2026, Tashkent",
     description:
-      "A first for Uzbekistan — a conference dedicated to snoring and sleep apnea, held together with the international OTOLOR 4 conference. November 28–29, 2026, EMU University, Tashkent. Early-bird pricing until October 1.",
+      "A first for Uzbekistan — a conference dedicated to snoring and sleep apnea, held together with the international OTOLOR 4 conference. November 28–29, 2026, EMU University, Tashkent. Registration is open.",
   },
   common: {
     register: "Register",
@@ -365,8 +363,8 @@ const en: Dictionary = {
   banner: {
     badge: "Important",
     items: [
-      "REGISTRATION IS OPEN — EARLY-BIRD PRICING",
-      "Early-bird pricing until October 1 · Standard 800,000 UZS",
+      "REGISTRATION IS OPEN",
+      "Standard pass — 1,100,000 UZS",
       "Seats are LIMITED — register today!",
       "28–29.11.2026 · EMU University, Tashkent",
     ],
@@ -436,9 +434,8 @@ const en: Dictionary = {
   },
   register: {
     eyebrow: "Registration is open",
-    title: "Early-bird pricing until October 1.",
-    lead: "Seats are limited. Prices go up after October 1.",
-    regularPrice: (price) => `From October 1: ${price}`,
+    title: "Reserve your seat.",
+    lead: "Seats are limited — don't leave registration to the last minute.",
     tiers: {
       residents: { name: "Residents & master's students", note: "ID required" },
       standard: { name: "Standard", note: "Most popular" },
