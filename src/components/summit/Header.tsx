@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/apnologlar-logo.png";
 import otolor from "@/assets/otolor-logo.jpg";
+import { useI18n } from "@/lib/i18n";
 import { TELEGRAM_REGISTER_URL } from "@/lib/site";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { RegistrationBanner } from "./RegistrationBanner";
 
-const links = [
-  { href: "#program", label: "Dastur" },
-  { href: "#speakers", label: "Ma'ruzachilar" },
-  { href: "#register", label: "Narxlar" },
-  { href: "#venue", label: "Manzil" },
-  { href: "#sponsors", label: "Hamkorlar" },
-  { href: "#contact", label: "Aloqa" },
-];
+const sections = ["program", "speakers", "register", "venue", "sponsors", "contact"] as const;
 
 export function Header() {
+  const { t } = useI18n();
+  const links = sections.map((id) => ({ href: `#${id}`, label: t.header.nav[id] }));
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
@@ -33,13 +30,13 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3 sm:px-8 sm:py-4">
         <a href="#top" className="flex flex-col items-center gap-1">
           <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
-            In partnership with
+            {t.common.inPartnershipWith}
           </span>
           <div className="flex items-center gap-2.5">
             <div className="h-11 w-11 sm:h-13 sm:w-13 rounded-full overflow-hidden ring-2 ring-primary/20 shadow-elegant flex-shrink-0">
               <img
                 src={logo}
-                alt="O'zbekiston Apnologlari"
+                alt={t.common.organizerLogoAlt}
                 className="h-full w-full object-cover"
               />
             </div>
@@ -49,7 +46,7 @@ export function Header() {
             </div>
           </div>
         </a>
-        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
+        <nav className="hidden items-center gap-6 lg:flex xl:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
@@ -60,33 +57,37 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href={TELEGRAM_REGISTER_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5"
-        >
-          Ro'yxatdan o'tish
-        </a>
-        <button
-          aria-label="Menu"
-          onClick={() => setOpen(!open)}
-          className="md:hidden rounded-md p-2 text-foreground"
-        >
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+        <div className="flex items-center gap-2 sm:gap-3">
+          <LanguageSwitcher />
+          <a
+            href={TELEGRAM_REGISTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-soft transition-all hover:shadow-elegant hover:-translate-y-0.5"
           >
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-        </button>
+            {t.common.register}
+          </a>
+          <button
+            aria-label={t.header.menu}
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+            className="lg:hidden rounded-md p-2 text-foreground"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+            >
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+          </button>
+        </div>
       </div>
       {open && (
-        <div className="md:hidden border-t border-border bg-background">
+        <div className="lg:hidden border-t border-border bg-background">
           <div className="flex flex-col px-6 py-4">
             {links.map((l) => (
               <a
@@ -103,9 +104,9 @@ export function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
+              className="mt-2 inline-flex justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground md:hidden"
             >
-              Ro'yxatdan o'tish
+              {t.common.register}
             </a>
           </div>
         </div>

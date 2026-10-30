@@ -1,19 +1,14 @@
-import {
-  VENUE_DISTRICT,
-  VENUE_MAP_EMBED_URL,
-  VENUE_MAP_URL,
-  VENUE_NAME,
-  VENUE_STREET,
-} from "@/lib/site";
-
-const details = [
-  { label: "Manzil", value: VENUE_NAME },
-  { label: "Ko'cha", value: VENUE_STREET },
-  { label: "Shahar", value: VENUE_DISTRICT },
-  { label: "Sana", value: "28–29-noyabr 2026" },
-];
+import { useI18n } from "@/lib/i18n";
+import { VENUE_MAP_EMBED_URL, VENUE_MAP_URL, VENUE_NAME } from "@/lib/site";
 
 export function Venue() {
+  const { t } = useI18n();
+  const details = [
+    { label: t.venue.labels.venue, value: VENUE_NAME },
+    { label: t.venue.labels.street, value: t.venue.street },
+    { label: t.venue.labels.city, value: t.venue.district },
+    { label: t.venue.labels.date, value: t.common.dates },
+  ];
   return (
     <section
       id="venue"
@@ -24,14 +19,12 @@ export function Venue() {
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8">
         <div className="max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-            Manzil
+            {t.venue.eyebrow}
           </div>
           <h2 className="mt-3 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            {VENUE_NAME}, Toshkent
+            {VENUE_NAME}, {t.common.city}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Konferensiyaning ikkala kuni ham shu manzilda o'tkaziladi.
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground">{t.venue.lead}</p>
         </div>
 
         <div className="reveal mt-10 grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)]">
@@ -54,7 +47,7 @@ export function Venue() {
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:shadow-glow lg:mt-auto"
             >
-              Yandex Xaritada ochish
+              {t.venue.openMap}
               <svg
                 width="15"
                 height="15"
@@ -71,8 +64,8 @@ export function Venue() {
 
           <div className="overflow-hidden rounded-2xl border border-border shadow-soft">
             <iframe
-              src={VENUE_MAP_EMBED_URL}
-              title={`${VENUE_NAME} — Yandex Xarita`}
+              src={`${VENUE_MAP_EMBED_URL}&lang=${t.venue.mapLang}`}
+              title={`${VENUE_NAME} — ${t.venue.mapTitle}`}
               loading="lazy"
               allowFullScreen
               className="block h-[360px] w-full border-0 sm:h-[440px] lg:h-full lg:min-h-[520px]"

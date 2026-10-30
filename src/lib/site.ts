@@ -4,10 +4,8 @@ export const TELEGRAM_REGISTER_URL = "https://t.me/OtolorAcademyBot?start=c2hvd0
 /** Handle shown to users when the bot is referred to by name. */
 export const TELEGRAM_BOT_HANDLE = "@OtolorAcademyBot";
 
-/** Venue — EMU University, Toshkent. Address as listed on its Yandex Maps card. */
+/** Venue — EMU University, Toshkent. The localised street address lives in the i18n dictionary. */
 export const VENUE_NAME = "EMU University";
-export const VENUE_STREET = "Bunyodkor shoh ko'chasi, 42A";
-export const VENUE_DISTRICT = "Chilonzor tumani, Toshkent";
 
 /** Organisation card on Yandex Maps, used for the outbound link. */
 export const VENUE_MAP_URL = "https://yandex.ru/maps/org/emu_university/241930904388/";

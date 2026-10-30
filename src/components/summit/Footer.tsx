@@ -1,14 +1,10 @@
 import apnologlarLogo from "@/assets/apnologlar-logo.png";
 import otolor from "@/assets/otolor-logo.jpg";
-import {
-  TELEGRAM_BOT_HANDLE,
-  TELEGRAM_REGISTER_URL,
-  VENUE_DISTRICT,
-  VENUE_NAME,
-  VENUE_STREET,
-} from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
+import { TELEGRAM_BOT_HANDLE, TELEGRAM_REGISTER_URL, VENUE_NAME } from "@/lib/site";
 
 export function Footer() {
+  const { t } = useI18n();
   return (
     <footer id="contact" className="border-t border-border bg-secondary/40">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 py-16">
@@ -17,13 +13,13 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex flex-col items-start gap-1">
               <span className="text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium">
-                In partnership with
+                {t.common.inPartnershipWith}
               </span>
               <div className="flex items-center gap-3">
                 <div className="h-14 w-14 rounded-full overflow-hidden ring-2 ring-primary/20 shadow-elegant shrink-0">
                   <img
                     src={apnologlarLogo}
-                    alt="O'zbekiston Apnologlari"
+                    alt={t.common.organizerLogoAlt}
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -33,43 +29,40 @@ export function Footer() {
                 </div>
               </div>
             </div>
-            <p className="mt-5 max-w-md text-sm text-muted-foreground">
-              O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR
-              4» xalqaro konferensiyasi bilan birga. 2 kun, bir maqsad.
-            </p>
+            <p className="mt-5 max-w-md text-sm text-muted-foreground">{t.footer.about}</p>
           </div>
 
           {/* Venue */}
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-foreground">
-              Manzil
+              {t.footer.venue}
             </div>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
               {VENUE_NAME}
               <br />
-              {VENUE_STREET}
+              {t.venue.street}
               <br />
-              {VENUE_DISTRICT}
+              {t.venue.district}
               <br />
-              28–29-noyabr 2026
+              {t.common.dates}
             </p>
             <a
               href="#venue"
               className="mt-3 inline-block text-sm font-medium text-primary hover:underline"
             >
-              Xaritada ko'rish
+              {t.footer.viewOnMap}
             </a>
           </div>
 
           {/* Contact */}
           <div>
             <div className="text-xs font-semibold uppercase tracking-widest text-foreground">
-              Aloqa
+              {t.footer.contact}
             </div>
             <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>+998 77 118 38 83</p>
               <p>
-                Ro'yxatdan o'tish:{" "}
+                {t.footer.registration}{" "}
                 <a
                   href={TELEGRAM_REGISTER_URL}
                   target="_blank"
@@ -114,9 +107,7 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-12 border-t border-border pt-6">
-          <div className="text-xs text-muted-foreground">
-            © 2026 O'zbekiston apnologlari. Barcha huquqlar himoyalangan.
-          </div>
+          <div className="text-xs text-muted-foreground">{t.footer.copyright}</div>
         </div>
       </div>
     </footer>

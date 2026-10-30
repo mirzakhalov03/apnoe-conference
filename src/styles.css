@@ -169,6 +169,12 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+
+  /* Space Grotesk has no Cyrillic; set Russian headings wholly in Inter rather
+     than mixing the two fonts glyph by glyph. */
+  html:lang(ru) :is(h1, h2, h3, h4, .font-display) {
+    font-family: var(--font-sans);
+  }
 }
 
 @layer utilities {

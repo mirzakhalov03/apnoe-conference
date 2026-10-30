@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useI18n } from "@/lib/i18n";
 
 // 09:00 Toshkent (UTC+5) — the first session's start time.
 const TARGET = new Date("2026-11-28T04:00:00Z").getTime();
@@ -14,6 +15,7 @@ function diff(now: number) {
 }
 
 export function Countdown() {
+  const { t: tr } = useI18n();
   const [t, setT] = useState(() => diff(TARGET));
   useEffect(() => {
     setT(diff(Date.now()));
@@ -21,10 +23,10 @@ export function Countdown() {
     return () => clearInterval(i);
   }, []);
   const items: [string, number][] = [
-    ["Kun", t.days],
-    ["Soat", t.hours],
-    ["Daqiqa", t.minutes],
-    ["Soniya", t.seconds],
+    [tr.countdown.days, t.days],
+    [tr.countdown.hours, t.hours],
+    [tr.countdown.minutes, t.minutes],
+    [tr.countdown.seconds, t.seconds],
   ];
   return (
     <div className="flex gap-3 sm:gap-5">

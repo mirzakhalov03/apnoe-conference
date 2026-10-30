@@ -1,14 +1,8 @@
-const items = [
-  "RO'YXATDAN O'TISH OCHILDI — ERTA NARX (EARLY BIRD)",
-  "Erta narx 1-oktabrgacha · Standart 800 000 so'm",
-  "Joylar CHEKLANGAN — bugun ro'yxatdan o'ting!",
-  "Limited seats available — register today!",
-  "28–29.11.2026 · EMU University, Toshkent",
-];
-
-const repeated = [...items, ...items];
+import { useI18n } from "@/lib/i18n";
 
 export function RegistrationBanner() {
+  const { t } = useI18n();
+  const repeated = [...t.banner.items, ...t.banner.items];
   return (
     <div className="relative flex h-9 items-center overflow-hidden bg-primary">
       {/* Left badge */}
@@ -18,7 +12,7 @@ export function RegistrationBanner() {
           <span className="relative inline-flex h-2 w-2 rounded-full bg-white" />
         </span>
         <span className="font-display text-[11px] font-bold uppercase tracking-widest whitespace-nowrap">
-          Muhim
+          {t.banner.badge}
         </span>
         {/* angled right edge */}
         <span className="absolute right-0 top-0 h-full w-3 translate-x-full bg-red-600 [clip-path:polygon(0_0,0%_100%,100%_100%)]" />

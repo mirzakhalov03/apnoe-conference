@@ -1,13 +1,15 @@
-const sponsors = [
-  "Otolor",
-  "Corel Med",
-  "Barun",
-  "EMU University",
-  "Silent Sleep",
-  "Bolalar Milliy Tibbiyot Markazi",
-];
+import { useI18n } from "@/lib/i18n";
 
 export function Sponsors() {
+  const { t } = useI18n();
+  const sponsors = [
+    "Otolor",
+    "Corel Med",
+    "Barun",
+    "EMU University",
+    "Silent Sleep",
+    t.sponsors.childrensCenter,
+  ];
   return (
     <section
       id="sponsors"
@@ -16,10 +18,10 @@ export function Sponsors() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[320px] w-[620px] max-w-full -translate-x-1/2 rounded-full bg-primary/5 blur-3xl animate-drift-slow" />
       <div className="relative mx-auto max-w-6xl px-6 sm:px-8 text-center">
         <div className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-          Hamkorlar va Homiylar
+          {t.sponsors.eyebrow}
         </div>
         <h2 className="mt-3 font-display text-3xl font-bold text-foreground sm:text-4xl">
-          Global yetakchilar bilan hamkorlikda
+          {t.sponsors.title}
         </h2>
         <div className="rule-fade mx-auto mt-6 h-px w-24" />
 

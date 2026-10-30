@@ -1,8 +1,10 @@
 import heroPoster from "@/assets/hero-uzapnea.jpg";
-import { TELEGRAM_REGISTER_URL } from "@/lib/site";
+import { useI18n } from "@/lib/i18n";
+import { TELEGRAM_REGISTER_URL, VENUE_NAME } from "@/lib/site";
 import { Countdown } from "./Countdown";
 
 export function Hero() {
+  const { t } = useI18n();
   return (
     <section id="top" className="relative overflow-hidden pt-40 sm:pt-48 pb-20 sm:pb-28">
       <div className="absolute inset-0 grid-pattern texture-fade" />
@@ -13,17 +15,14 @@ export function Hero() {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-primary">
             <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-            EMU University, Toshkent · 28–29.11.2026
+            {VENUE_NAME}, {t.common.city} · 28–29.11.2026
           </div>
           {/* Sized so the long "KONFERENSIYASI" fits without clipping on 360px phones. */}
           <h1 className="mt-6 font-display text-[2.15rem] font-bold leading-[1.05] text-foreground min-[420px]:text-[2.6rem] sm:text-6xl lg:text-7xl text-balance">
-            <span className="block text-gradient">1-UZAPNEA va OTOLOR 4</span>
-            <span className="block">KONFERENSIYASI</span>
+            <span className="block text-gradient">{t.hero.titleLine1}</span>
+            <span className="block">{t.hero.titleLine2}</span>
           </h1>
-          <p className="mt-4 text-lg text-muted-foreground text-balance">
-            O'zbekistonda ilk bor — xurrak va uyqu apnoesiga bag'ishlangan konferensiya, «OTOLOR 4»
-            xalqaro konferensiyasi bilan birga.
-          </p>
+          <p className="mt-4 text-lg text-muted-foreground text-balance">{t.hero.lead}</p>
           <div className="mt-10">
             <Countdown />
           </div>
@@ -35,7 +34,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-elegant transition-all hover:-translate-y-0.5 hover:shadow-glow"
             >
-              Ro'yxatdan o'tish
+              {t.common.register}
               <svg
                 width="16"
                 height="16"
@@ -51,14 +50,14 @@ export function Hero() {
               href="#register"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary hover:text-primary"
             >
-              Narxlarni ko'rish
+              {t.hero.seePrices}
             </a>
           </div>
           <div className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8 max-w-md">
             {[
-              ["20+", "Ma'ruzachilar"],
-              ["5+", "Davlatlar"],
-              ["600+", "Ishtirokchilar"],
+              ["20+", t.hero.stats.speakers],
+              ["5+", t.hero.stats.countries],
+              ["600+", t.hero.stats.attendees],
             ].map(([v, l]) => (
               <div key={l}>
                 <div className="font-display text-2xl font-bold text-primary">{v}</div>
@@ -72,7 +71,7 @@ export function Hero() {
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-gradient-soft shadow-elegant">
             <img
               src={heroPoster}
-              alt="1-UZAPNEA 2026 — O'zbekistondagi birinchi uyqu tibbiyoti anjumani. OTOLOR 4 konferensiyasi."
+              alt={t.hero.posterAlt}
               className="h-full w-full object-cover animate-float"
               width={640}
               height={640}
@@ -80,9 +79,11 @@ export function Hero() {
           </div>
           <div className="absolute -top-4 -right-4 rounded-2xl border border-primary/20 bg-primary px-4 py-3 shadow-glow hidden sm:block">
             <div className="text-[10px] uppercase tracking-widest text-primary-foreground/70">
-              CME Soatlari
+              {t.hero.cmeLabel}
             </div>
-            <div className="font-display text-xl font-bold text-primary-foreground">8 soat</div>
+            <div className="font-display text-xl font-bold text-primary-foreground">
+              {t.hero.cmeValue}
+            </div>
           </div>
         </div>
       </div>

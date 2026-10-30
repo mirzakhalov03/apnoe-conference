@@ -3,17 +3,21 @@ import s2 from "@/assets/speaker-2.jpg";
 import s3 from "@/assets/speaker-3.webp";
 import s4 from "@/assets/speaker-4.webp";
 import s5 from "@/assets/speaker-5.webp";
+import { useI18n } from "@/lib/i18n";
+
+// Names come from the dictionary (localised spelling), matched by index.
 // `position` biases the square crop for portrait source images, whose heads
 // sit above the centre and would otherwise be cut off. Defaults to centred.
 const speakers = [
-  { name: "Tuyg'unxon Muzaffarov", image: s1, position: "object-top" },
-  { name: "Sherzod Gulyamov", image: s2 },
-  { name: "Vladimir Krivitskiy", image: s3 },
-  { name: "Roman Buzunov", image: s4 },
-  { name: "Maryam Jafarova", image: s5 },
+  { id: "muzaffarov", image: s1, position: "object-top" },
+  { id: "gulyamov", image: s2 },
+  { id: "krivitskiy", image: s3 },
+  { id: "buzunov", image: s4 },
+  { id: "jafarova", image: s5 },
 ];
 
 export function Speakers() {
+  const { t } = useI18n();
   return (
     <section
       id="speakers"
@@ -44,25 +48,25 @@ export function Speakers() {
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
             </span>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-              Mutaxassislar
+              {t.speakers.eyebrow}
             </span>
           </div>
           <h2 className="mt-4 font-display text-4xl font-bold text-foreground sm:text-5xl text-balance">
-            Konferensiyamiz ma'ruzachilari
+            {t.speakers.title}
           </h2>
         </div>
 
         <div className="reveal mt-14 grid grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
           {/* 6 visible speakers */}
-          {speakers.map((s) => (
-            <div key={s.name} className="group text-center">
+          {speakers.map((s, i) => (
+            <div key={s.id} className="group text-center">
               <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
                 <div className="absolute inset-[-10px] rounded-full border border-dashed border-primary/15 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                 <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-40" />
                 <div className="relative h-full w-full overflow-hidden rounded-full ring-1 ring-border transition-all duration-500 group-hover:ring-2 group-hover:ring-primary group-hover:-translate-y-1">
                   <img
                     src={s.image}
-                    alt={s.name}
+                    alt={t.speakers.names[i]}
                     loading="lazy"
                     width={400}
                     height={400}
@@ -71,7 +75,7 @@ export function Speakers() {
                 </div>
               </div>
               <div className="mt-5 font-display text-base font-semibold text-foreground">
-                {s.name}
+                {t.speakers.names[i]}
               </div>
               <div className="mx-auto mt-2 h-px w-8 bg-primary/30" />
             </div>
@@ -92,7 +96,7 @@ export function Speakers() {
                 {/* Overlay text */}
                 <div className="absolute inset-0 flex items-center justify-center rounded-full">
                   <span className="font-display text-[11px] font-bold uppercase tracking-widest text-foreground/60 text-center leading-snug px-3">
-                    Va boshqalar tez kunda e'lon qilinadi
+                    {t.speakers.moreSoon}
                   </span>
                 </div>
               </div>
