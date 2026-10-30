@@ -1,8 +1,10 @@
-import { createRouter, useRouter } from "@tanstack/react-router";
+import { createRouter, useRouter, type ErrorComponentProps } from "@tanstack/react-router";
 import { useI18n } from "@/lib/i18n";
 import { routeTree } from "./routeTree.gen";
 
-function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function DefaultErrorComponent({ error, reset }: ErrorComponentProps) {
+  // Anything can be thrown, so only show a message when there is one.
+  const message = error instanceof Error ? error.message : undefined;
   const router = useRouter();
   const { t } = useI18n();
 
@@ -27,9 +29,9 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-foreground">{t.error.title}</h1>
         <p className="mt-2 text-sm text-muted-foreground">{t.error.description}</p>
-        {import.meta.env.DEV && error.message && (
+        {import.meta.env.DEV && message && (
           <pre className="mt-4 max-h-40 overflow-auto rounded-md bg-muted p-3 text-left font-mono text-xs text-destructive">
-            {error.message}
+            {message}
           </pre>
         )}
         <div className="mt-6 flex items-center justify-center gap-3">
