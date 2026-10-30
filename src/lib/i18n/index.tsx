@@ -18,7 +18,7 @@ function isLanguage(value: unknown): value is Language {
   return LANGUAGES.some((l) => l.code === value);
 }
 
-/** `?lang=` wins (shareable links), then the saved choice, then the browser's languages. */
+/** `?lang=` wins (shareable links), then the saved choice; first-time visitors get Uzbek. */
 function detectLanguage(): Language {
   const fromQuery = new URLSearchParams(window.location.search).get("lang");
   if (isLanguage(fromQuery)) return fromQuery;
@@ -30,10 +30,6 @@ function detectLanguage(): Language {
     // Storage can be unavailable (private mode, blocked cookies).
   }
 
-  for (const tag of navigator.languages ?? [navigator.language]) {
-    const base = tag.toLowerCase().split("-")[0];
-    if (isLanguage(base)) return base;
-  }
   return DEFAULT_LANGUAGE;
 }
 
